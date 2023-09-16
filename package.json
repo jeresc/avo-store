@@ -19,6 +19,14 @@
   },
   "devDependencies": {
     "@types/node": "20.5.9",
+    "@types/react": "^18.2.21",
+    "prettier": "^3.0.3",
     "typescript": "5.2.2"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
   }
 }
