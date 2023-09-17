@@ -20,7 +20,6 @@ class Database {
   }
 }
 
-// Let's also add a delay to make it a bit closer to reality
 const randomDelay = () =>
   new Promise((resolve) => {
     const max = 350
