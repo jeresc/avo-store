@@ -1,4 +1,3 @@
-import { Navbar } from '@/components/Navbar/navbar'
 import { useEffect, useState } from 'react'
 
 function Home() {
@@ -15,9 +14,8 @@ function Home() {
 
   return (
     <main>
-      <Navbar />
       <h2>Hey there! </h2>
-      {productList?.length &&
+      {Boolean(productList?.length) &&
         productList.map((product) => (
           <div key={product.id}>
             {product.name} - {product.id}

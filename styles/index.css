@@ -1,0 +1,12 @@
+/*
+NextJS CSS Options:
+  - CSS Modules
+  - Styled JSX
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'globals.css';
+@import 'normalize.css';
