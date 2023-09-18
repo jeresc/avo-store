@@ -9,7 +9,7 @@ function Document() {
         {/*stylesheet*/}
         {/*script/js*/}
       </Head>
-      <body className="dark">
+      <body className="dark w-full max-w-3xl mx-auto lg:max-w-5xl">
         <Main />
         <NextScript />
       </body>

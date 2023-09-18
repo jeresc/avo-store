@@ -5,8 +5,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Navbar />
-      {children}
-      <footer>This is the footer</footer>
+      <main className="w-full p-4">{children}</main>
+      <footer className="w-full">This is the footer</footer>
       {/*
         <style jsx>{`
           footer {

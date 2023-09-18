@@ -1,28 +1,42 @@
-import { useEffect, useState } from 'react'
+import { AvoContainer } from '@/components'
+import DB from '@database'
 
-function Home() {
+interface IProps {
+  productList: TProduct[]
+}
+
+function Home({ productList }: IProps) {
+  /* 
+  Auto-DDoS: 
+
   const [productList, setProductList] = useState<TProduct[]>([])
 
-  useEffect(() => {
-    window
+  useEffect(() => { window
       .fetch('/api/avo')
       .then((res) => res.json())
       .then(({ data }) => {
         setProductList(data)
       })
   }, [])
+  */
 
   return (
-    <main>
-      <h2>Hey there! </h2>
-      {Boolean(productList?.length) &&
-        productList.map((product) => (
-          <div key={product.id}>
-            {product.name} - {product.id}
-          </div>
-        ))}
-    </main>
+    <>
+      <AvoContainer avos={productList} />
+    </>
   )
 }
 
 export default Home
+
+// getStaticProps vs getServerSideProps
+export async function getStaticProps() {
+  const db = new DB()
+  const productList = await db.getAll()
+
+  return {
+    props: {
+      productList,
+    },
+  }
+}
