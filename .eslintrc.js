@@ -4,21 +4,31 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true,
+    node: true
   },
   extends: [
-    'standard-with-typescript',
-    'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@next/next/recommended'
   ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: 'tsconfig.json',
-    tsconfigRootDir: __dirname,
+    tsconfigRootDir: __dirname
   },
   ignorePatterns: ['.eslintrc.js'],
-  plugins: ['react', 'plugin:prettier/recommended'],
-  rules: {},
-  exclude: ['node_modules/**'],
+  plugins: ['react'],
+  rules: {
+    'react/react-in-jsx-scope': 'off'
+  },
+  overrides: [
+    {
+      files: ['**/*.tsx'],
+      extends: 'standard-with-typescript',
+      rules: {
+        '@typescript-eslint/space-before-function-paren': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off'
+      }
+    }
+  ]
 }

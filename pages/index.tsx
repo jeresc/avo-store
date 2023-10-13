@@ -6,8 +6,8 @@ interface IProps {
 }
 
 function Home({ productList }: IProps) {
-  /* 
-  Auto-DDoS: 
+  /*
+  Auto-DDoS / Client Side Rendered:
 
   const [productList, setProductList] = useState<TProduct[]>([])
 
@@ -36,7 +36,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      productList,
-    },
+      productList
+    }
   }
 }
